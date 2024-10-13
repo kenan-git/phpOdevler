@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Odev1</title>
+    <style>
+        .table {
+            display: grid;
+            grid-template-columns: repeat(12, auto);
+            width: 100px;
+            border: none;
+            gap: 10px;
+        }
+        .cell {
+            border: 1px dashed black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            white-space: nowrap;
+
+        }
+        .rowspan {
+            grid-row: span 2;
+        }
+        .colspan-5 {
+            grid-column: span 5;
+        }
+
+        .dropdown {
+            width: 75px;
+            border: none;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="black"/></svg>') no-repeat right center;
+            background-size: 10px;
+        }
+        .kutucuk {
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+        }
+
+        .toplam-kutusu {
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+        }
+
+        .total-row{
+            grid-column: span 5;
+            justify-content: flex-end;
+        }
+        .bottom-line{
+            border: none;
+            grid-column: span 12;
+            border-top: 1px solid black;
+        }
+
+        .toplam-tablosu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: none;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100px;
+        }
+        .new-cell {
+            border: 1px dashed; black;
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 200px;
+            white-space: nowrap;
+        }
+
+        .new-header {
+            border: 1px dashed; black;
+            text-align: center;
+            justify-content: start;
+            align-items: center;
+            width: 100px;
+            white-space: nowrap;
+        }
+        .new-cell-none {
+            border: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="table">
+        <div class="cell rowspan">Sıra</div>
+        <div class="cell colspan-5">Vergi İadesine Esas Belgenin</div>
+        <div class="cell rowspan">Sıra</div>
+        <div class="cell colspan-5">Vergi İadesine Esas Belgenin</div>
+
+        <div class="cell">Tarihi</div>
+        <div class="cell">No</div>
+        <div class="cell">Kimden Alındığı</div>
+        <div class="cell">Türü</div>
+        <div class="cell">Tutarı</div>
+        <div class="cell">Tarihi</div>
+        <div class="cell">No</div>
+        <div class="cell">Kimden Alındığı</div>
+        <div class="cell">Türü</div>
+        <div class="cell">Tutarı</div>
+
+        <div class="cell">1</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">21</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">2</div>  <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">22</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">3</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">23</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">4</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">24</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">5</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">25</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">6</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">26</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">7</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">27</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">8</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">28</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">9</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">29</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">10</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">30</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">11</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">31</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">12</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">32</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">13</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">33</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">14</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">34</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">15</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">35</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">16</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">36</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">17</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">37</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">18</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">38</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">19</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+            
+        <div class="cell">39</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell">20</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+                    
+        <div class="cell">40</div> <div class="kutucuk"><input type="text"></div> <div class="kutucuk"><input type="number"></div><div class="kutucuk"><input type="text"></div>
+        <div class="kutucuk">
+            <select class="dropdown">
+                <option value="" disabled selected></option>
+                <option value="sağlık">Sağlık</option>
+                <option value="gıda">Gıda</option>
+                <option value="temizlik">Temizlik</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="kira">Kira</option>
+            </select></div><div class="kutucuk"><input type="number"></div>
+
+        <div class="cell total-row" colspan="5">TOPLAM</div> <div class="kutucuk"></div>
+        <div class="cell total-row" colspan="5">TOPLAM</div> <div class="kutucuk"></div>
+
+        <div class="cell bottom-line"></div>
+    </div>
+
+    <div class="toplam-tablosu">
+        <div class="new-cell-none"></div> <div class="new-header">Adet</div> <div class="new-header">Tutar</div>
+        
+        <div class="new-cell">Genel Toplam</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+        <div class="new-cell">Sağlık</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+        <div class="new-cell">Gıda</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+        <div class="new-cell">Giysi</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+        <div class="new-cell">Temizlik</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+        <div class="new-cell">Eğitim</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+        <div class="new-cell">Kira</div> <div class="toplam-kutusu"></div> <div class="toplam-kutusu"></div>
+
+
+    </div>
+
+</body>
+</html>
